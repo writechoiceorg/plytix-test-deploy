@@ -1,0 +1,9 @@
+{
+  "title": "Channels",
+  "pages": [
+    "search_channels_api_v3_channels_get",
+    "create_channels_api_v3_channels_post",
+    "get_channels_api_v3_channels__identifier__get",
+    "get_channels_subpath_api_v3_channels__identifier___path__get"
+  ]
+}

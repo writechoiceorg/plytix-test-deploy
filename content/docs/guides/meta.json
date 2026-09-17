@@ -1,0 +1,22 @@
+{
+  "title": "Guides",
+  "root": true,
+  "pages": [
+    "---Get Started---",
+    "overview",
+    "quickstart",
+    "data-model",
+    "choosing-api-version",
+    "---Plytix MCP---",
+    "setup-mcp",
+    "---Integration Guides---",
+    "sync-erp",
+    "export-full-catalog",
+    "audit-data-quality",
+    "marketplace-feed",
+    "remove-category-asset-relationship",
+    "parent-variant-hierarchies",
+    "bulk-operations",
+    "webhooks-automations"
+  ]
+}

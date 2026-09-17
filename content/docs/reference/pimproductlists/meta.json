@@ -1,0 +1,9 @@
+{
+  "title": "PIM Product Lists",
+  "pages": [
+    "search_pim_product_lists_api_v3_pim_product_lists_get",
+    "create_pim_product_lists_api_v3_pim_product_lists_post",
+    "get_pim_product_lists_api_v3_pim_product_lists__identifier__get",
+    "get_pim_product_lists_subpath_api_v3_pim_product_lists__identifier___path__get"
+  ]
+}

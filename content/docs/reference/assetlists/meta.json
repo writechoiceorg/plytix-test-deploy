@@ -1,0 +1,9 @@
+{
+  "title": "Asset Lists",
+  "pages": [
+    "search_asset_lists_api_v3_asset_lists_get",
+    "create_asset_lists_api_v3_asset_lists_post",
+    "get_asset_lists_api_v3_asset_lists__identifier__get",
+    "get_asset_lists_subpath_api_v3_asset_lists__identifier___path__get"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Product Attribute Groups",
+  "pages": [
+    "search_product_attribute_groups_api_v3_product_attribute_groups_get",
+    "create_product_attribute_groups_api_v3_product_attribute_groups_post",
+    "get_product_attribute_groups_api_v3_product_attribute_groups__identifier__get",
+    "get_product_attribute_groups_subpath_api_v3_product_attribute_groups__identifier___path__get"
+  ]
+}

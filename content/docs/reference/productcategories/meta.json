@@ -1,0 +1,9 @@
+{
+  "title": "Product Categories",
+  "pages": [
+    "search_product_categories_api_v3_product_categories_get",
+    "create_product_categories_api_v3_product_categories_post",
+    "get_product_categories_api_v3_product_categories__identifier__get",
+    "get_product_categories_subpath_api_v3_product_categories__identifier___path__get"
+  ]
+}

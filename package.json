@@ -1,0 +1,46 @@
+{
+  "name": "plytix-docs",
+  "version": "0.0.29",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "types:check": "next typegen && tsc --noEmit",
+    "lint": "eslint",
+    "generate:api": "node scripts/generate-docs.mjs",
+    "cf:preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "cf:deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf:typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.0.0",
+    "cn": "^0.2.6",
+    "fumadocs-core": "16.15.11",
+    "fumadocs-mdx": "15.4.1",
+    "fumadocs-openapi": "^11.4.3",
+    "fumadocs-ui": "npm:@fumadocs/base-ui@16.15.11",
+    "lucide-react": "^1.43.0",
+    "next": "16.3.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.6",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^26.5.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "16.3.4",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.133.0"
+  }
+}

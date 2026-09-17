@@ -1,0 +1,9 @@
+{
+  "title": "Product Attributes",
+  "pages": [
+    "search_product_attributes_api_v3_product_attributes_get",
+    "create_product_attributes_api_v3_product_attributes_post",
+    "get_product_attributes_api_v3_product_attributes__identifier__get",
+    "get_product_attributes_subpath_api_v3_product_attributes__identifier___path__get"
+  ]
+}

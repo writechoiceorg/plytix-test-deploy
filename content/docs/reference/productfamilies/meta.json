@@ -1,0 +1,8 @@
+{
+  "title": "Product Families",
+  "pages": [
+    "search_product_families_api_v3_product_families_get",
+    "get_product_families_api_v3_product_families__identifier__get",
+    "get_product_families_subpath_api_v3_product_families__identifier___path__get"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Relationships",
+  "pages": [
+    "search_relationships_api_v3_relationships_get",
+    "get_relationships_api_v3_relationships__identifier__get",
+    "get_relationships_subpath_api_v3_relationships__identifier___path__get"
+  ]
+}

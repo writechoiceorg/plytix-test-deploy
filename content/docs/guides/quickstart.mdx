@@ -1,0 +1,125 @@
+---
+title: Quickstart
+description: Generate an API key, exchange it for a bearer token, and make your first authenticated request.
+---
+
+import { BookOpen, TriangleAlert } from 'lucide-react';
+
+This guide is a step-by-step checklist to connect your systems with the Plytix API, which involves three steps:
+
+1. Generate your API credentials.
+2. Exchange them for a bearer token.
+3. Verify the connection with a test call.
+
+## Integration Steps
+
+<Steps>
+  <Step>
+    ### Get your API credentials
+
+    Only Owners and Admins can create and manage API keys. If you don't have Admin rights, ask an account Owner or Admin to complete this step, or to grant you those rights first.
+
+    1. Access and login into [your Dashboard](http://accounts.plytix.com/).
+    2. Open the **API** tab.
+    3. Create a key with a name and a role (the role determines its access rights).
+    4. Copy the **API key** and **API password** using the clipboard icon next to it.
+
+    You can edit, re-role, or delete a key later from the same API tab.
+
+    <Callout title="Self-service key creation">
+      Unlike processes that require manual approval, creating a Plytix API key is self-service. Once you have Admin or Owner rights, you can generate one immediately.
+    </Callout>
+  </Step>
+  <Step>
+    ### Retrieve a bearer token
+
+    The Plytix API uses bearer token authentication. You don't send your API key and password on every request. Instead, you exchange them once for a token, then send that token instead.
+
+    Send a **POST** request to the `/auth/api/get-token` endpoint to retrieve your bearer token.
+
+    <Tabs items={['Request', 'Response']}>
+      <Tab value="Request">
+        ```bash
+        curl --request POST \
+          --url https://auth.plytix.com/auth/api/get-token \
+          --header 'Content-Type: application/json' \
+          --data '{
+            "api_key": "your.api.key",
+            "api_password": "your.secret.api.password"
+          }'
+        ```
+      </Tab>
+      <Tab value="Response">
+        ```json
+        {
+          "data": [
+            {
+              "access_token": "your_access_token"
+            }
+          ]
+        }
+        ```
+      </Tab>
+    </Tabs>
+
+    You will receive a bearer token in the response. Every request you make after that needs the `Authorization: Bearer <token>` header.
+  </Step>
+  <Step>
+    ### Validate connection
+
+    With a valid token, perform a GET request to the `/products` endpoint to confirm your connection is working:
+
+    <Tabs items={['Request', 'Response']}>
+      <Tab value="Request">
+        ```bash
+        curl --request GET \
+          --url https://pim.plytix.com/api/v3/products \
+          --header 'Authorization: Bearer <token>' \
+          --header 'Content-Type: application/json' \
+          --header 'Accept: application/json'
+        ```
+      </Tab>
+      <Tab value="Response">
+        ```json
+        {
+          "data": [
+            {
+              "id": "5f7c8a1b2c3d4e5f6a7b8c9d",
+              "sku": "SHIRT-001",
+              "label": "Classic Cotton T-Shirt",
+              "status": "Completed",
+              "created": "2026-01-15T10:30:00Z",
+              "modified": "2026-02-01T09:12:00Z"
+            }
+          ],
+          "errors": [],
+          "pagination": {
+            "next_page": null,
+            "previous_page": null
+          }
+        }
+        ```
+      </Tab>
+    </Tabs>
+
+    A successful response confirms your entire setup:
+    - Your API key and password are valid.
+    - Your bearer token exchange worked.
+    - Your request headers are correctly formatted.
+
+    If you get an error instead, check [Status codes and error codes](/docs/reference/errors-status-codes) for troubleshooting guidance.
+  </Step>
+</Steps>
+
+## What's next
+
+With your connection verified, you're ready to integrate. We recommend reviewing the following to build a robust integration.
+
+<Cards>
+  <Card icon={<BookOpen />} title="API Reference" href="/docs/reference/api-reference-overview">
+    Understand what the Plytix API is for and the resources it exposes.
+  </Card>
+  <Card icon={<TriangleAlert />} title="Status Codes & Errors" href="/docs/reference/errors-status-codes">
+    See the HTTP status codes and error formats the API returns.
+  </Card>
+</Cards>

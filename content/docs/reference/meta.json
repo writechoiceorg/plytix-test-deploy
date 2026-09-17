@@ -1,0 +1,33 @@
+{
+  "title": "API Reference",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "api-reference-overview",
+    "authentication",
+    "errors-status-codes",
+    "rate-limits",
+    "filtering-query-syntax",
+    "pagination",
+    "updates-and-deletes",
+    "---Endpoints---",
+    "products",
+    "assets",
+    "productcategories",
+    "assetcategories",
+    "assetlists",
+    "relationships",
+    "productfamilies",
+    "productattributes",
+    "productattributegroups",
+    "pimproductlists",
+    "channels",
+    "connections",
+    "ecatalogs",
+    "importprofiles",
+    "pdfcatalogs",
+    "productfamilymodels",
+    "unknown",
+    "probes"
+  ]
+}

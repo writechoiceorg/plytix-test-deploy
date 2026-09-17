@@ -1,0 +1,9 @@
+{
+  "title": "Import Profiles",
+  "pages": [
+    "search_import_profiles_api_v3_import_profiles_get",
+    "create_import_profiles_api_v3_import_profiles_post",
+    "get_import_profiles_api_v3_import_profiles__identifier__get",
+    "get_import_profiles_subpath_api_v3_import_profiles__identifier___path__get"
+  ]
+}

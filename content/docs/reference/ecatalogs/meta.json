@@ -1,0 +1,9 @@
+{
+  "title": "eCatalogs",
+  "pages": [
+    "search_ecatalogs_api_v3_ecatalogs_get",
+    "create_ecatalogs_api_v3_ecatalogs_post",
+    "get_ecatalogs_api_v3_ecatalogs__identifier__get",
+    "get_ecatalogs_subpath_api_v3_ecatalogs__identifier___path__get"
+  ]
+}

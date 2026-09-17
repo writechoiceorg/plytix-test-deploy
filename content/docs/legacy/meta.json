@@ -1,0 +1,5 @@
+{
+  "title": "Legacy API (v1/v2)",
+  "root": true,
+  "pages": ["api-v1-v2-reference"]
+}

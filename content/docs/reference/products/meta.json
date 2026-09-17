@@ -1,0 +1,11 @@
+{
+  "title": "Products",
+  "pages": [
+    "search_products_api_v3_products_get",
+    "create_products_api_v3_products_post",
+    "get_products_api_v3_products__identifier__get",
+    "delete_products_api_v3_products__identifier__delete",
+    "get_products_subpath_api_v3_products__identifier___path__get",
+    "delete_products_subpath_api_v3_products__identifier___path__delete"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Connections",
+  "pages": [
+    "search_connections_api_v3_connections_get",
+    "create_connections_api_v3_connections_post",
+    "get_connections_api_v3_connections__identifier__get",
+    "get_connections_subpath_api_v3_connections__identifier___path__get"
+  ]
+}

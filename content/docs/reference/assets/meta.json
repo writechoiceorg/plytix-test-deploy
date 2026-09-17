@@ -1,0 +1,11 @@
+{
+  "title": "Assets",
+  "pages": [
+    "search_assets_api_v3_assets_get",
+    "create_assets_api_v3_assets_post",
+    "get_assets_api_v3_assets__identifier__get",
+    "update_assets_api_v3_assets__identifier__patch",
+    "get_assets_subpath_api_v3_assets__identifier___path__get",
+    "update_assets_subpath_api_v3_assets__identifier___path__patch"
+  ]
+}

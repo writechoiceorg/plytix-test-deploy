@@ -1,0 +1,74 @@
+---
+title: Authentication
+description: Bearer-token request and response shapes, and how long a token stays valid.
+---
+
+import { Rocket, TriangleAlert } from 'lucide-react';
+
+The Plytix API uses bearer token authentication. Rather than sending your API key and password with every call, you exchange them once for a short-lived access token, then include that token in the `Authorization` header of every subsequent request instead. Your account administrator issues the API key and password from the account's API tab, and the role assigned to that key determines what it can access.
+
+This page documents that token exchange, and how to use the token you get back.
+
+## Get a bearer token
+
+To get a token, send your API key and password as the request body. Both fields are required:
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `api_key` | string | Yes | The API key generated from your account's API tab. |
+| `api_password` | string | Yes | The API password generated alongside the key. |
+
+Here's the full request and the response you'll get back:
+
+<Tabs items={['Request', 'Response']}>
+  <Tab value="Request">
+    ```bash
+    curl --request POST \
+      --url https://auth.plytix.com/auth/api/get-token \
+      --header 'Content-Type: application/json' \
+      --data '{
+        "api_key": "your.api.key",
+        "api_password": "your.secret.api.password"
+      }'
+    ```
+  </Tab>
+  <Tab value="Response">
+    ```json
+    {
+      "data": [
+        {
+          "access_token": "your_access_token"
+        }
+      ]
+    }
+    ```
+  </Tab>
+</Tabs>
+
+Use the returned token in the `Authorization` header of every subsequent request, with a space after `Bearer`:
+
+```
+Authorization: Bearer your_access_token
+```
+
+Tokens expire after 15 minutes. Once a token expires, requests using it return `401`, and you need to request a new one.
+
+## Error responses
+
+If the request fails, you'll get one of the following:
+
+| Status code | Example response |
+|---|---|
+| 400 BAD REQUEST | The request body is malformed. Check the request and try again. |
+| 401 UNAUTHORIZED | `{"msg": "Bad api_key or api_password"}` |
+
+## Related resources
+
+<Cards>
+  <Card icon={<Rocket />} title="Get started with the API" href="/docs/guides/quickstart">
+    Walk through generating credentials and making your first request.
+  </Card>
+  <Card icon={<TriangleAlert />} title="Status codes and error codes" href="/docs/reference/errors-status-codes">
+    See the full set of status codes the API returns.
+  </Card>
+</Cards>

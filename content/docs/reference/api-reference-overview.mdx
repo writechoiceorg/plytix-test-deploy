@@ -1,0 +1,99 @@
+---
+title: API Reference Overview
+description: How this tab is organized and how it relates to the Guides.
+---
+
+import {
+  Key,
+  TriangleAlert,
+  Box,
+  Network,
+  Layers,
+  Workflow,
+  Tag,
+  Tags,
+  Link as LinkIcon,
+  Image,
+  FolderTree,
+  List,
+  RadioTower,
+  Plug,
+  BookOpen,
+  FileText,
+  FileInput,
+  ListChecks,
+} from 'lucide-react';
+
+The Plytix API platform provides a suite of functionalities for managing your product content programmatically. It's built on standard REST principles and secured with bearer token authentication.
+
+This lets you connect your own systems, such as an ERP or storefront, to your Plytix account with confidence, so you can sync, enrich, and distribute product data instead of managing it only through the dashboard.
+
+## Core concepts
+
+Before integrating with a specific resource, review these fundamental patterns. Understanding them up front will save you from surprises once you start building.
+
+<Cards>
+  <Card icon={<Key />} title="Authentication" href="/docs/reference/authentication">
+    Get and use a bearer token for every request.
+  </Card>
+  <Card icon={<TriangleAlert />} title="HTTP status and error codes" href="/docs/reference/errors-status-codes">
+    Understand the API's success and error response formats.
+  </Card>
+</Cards>
+
+## Available services
+
+The API is organized by resource. Each one below is fully documented in the API Reference, with endpoints, request/response schemas, and examples.
+
+<Cards>
+  <Card icon={<Box />} title="Products" href="/docs/reference/products/search_products_api_v3_products_get">
+    Create, update, delete, and search the products in your catalog.
+  </Card>
+  <Card icon={<Network />} title="Product Categories" href="/docs/reference/productcategories/search_product_categories_api_v3_product_categories_get">
+    Organize products into a category hierarchy.
+  </Card>
+  <Card icon={<Layers />} title="Product Families" href="/docs/reference/productfamilies/search_product_families_api_v3_product_families_get">
+    Read the product families that group variants under shared attributes. Read-only.
+  </Card>
+  <Card icon={<Workflow />} title="Product Family Models" href="/docs/reference/productfamilymodels/search_product_family_models_api_v3_product_family_models_get">
+    Read the attribute structure a product family's variants share. Read-only.
+  </Card>
+  <Card icon={<Tag />} title="Product Attributes" href="/docs/reference/productattributes/search_product_attributes_api_v3_product_attributes_get">
+    Create and manage the custom attributes that describe your products.
+  </Card>
+  <Card icon={<Tags />} title="Product Attribute Groups" href="/docs/reference/productattributegroups/search_product_attribute_groups_api_v3_product_attribute_groups_get">
+    Organize product attributes into groups.
+  </Card>
+  <Card icon={<LinkIcon />} title="Relationships" href="/docs/reference/relationships/search_relationships_api_v3_relationships_get">
+    Read the links between related products, such as accessories or replacements. Read-only.
+  </Card>
+  <Card icon={<Image />} title="Assets" href="/docs/reference/assets/search_assets_api_v3_assets_get">
+    Create, update, and search the digital assets linked to your products.
+  </Card>
+  <Card icon={<FolderTree />} title="Asset Categories" href="/docs/reference/assetcategories/search_asset_categories_api_v3_asset_categories_get">
+    Organize assets into a category hierarchy.
+  </Card>
+  <Card icon={<List />} title="Asset Lists" href="/docs/reference/assetlists/search_asset_lists_api_v3_asset_lists_get">
+    Group assets into lists for reuse across products.
+  </Card>
+  <Card icon={<RadioTower />} title="Channels" href="/docs/reference/channels/search_channels_api_v3_channels_get">
+    Manage the channels you use to syndicate product data to marketplaces and other platforms.
+  </Card>
+  <Card icon={<Plug />} title="Connections" href="/docs/reference/connections/search_connections_api_v3_connections_get">
+    Manage the FTP/SFTP and Dropbox connections used to feed product data into Plytix.
+  </Card>
+  <Card icon={<BookOpen />} title="eCatalogs" href="/docs/reference/ecatalogs/search_ecatalogs_api_v3_ecatalogs_get">
+    Create and manage shareable digital catalogs of your products.
+  </Card>
+  <Card icon={<FileText />} title="PDF Catalogs" href="/docs/reference/pdfcatalogs/search_pdf_catalogs_api_v3_pdf_catalogs_get">
+    Generate PDF catalogs from your product data.
+  </Card>
+  <Card icon={<FileInput />} title="Import Profiles" href="/docs/reference/importprofiles/search_import_profiles_api_v3_import_profiles_get">
+    Manage the saved column-matching settings used to import product data.
+  </Card>
+  <Card icon={<ListChecks />} title="PIM Product Lists" href="/docs/reference/pimproductlists/search_pim_product_lists_api_v3_pim_product_lists_get">
+    Group products into smart or static lists.
+  </Card>
+</Cards>
+
+Relationships, Product Families, and Product Family Models are currently read-only through the API.

@@ -1,0 +1,76 @@
+---
+title: Errors and Status Codes
+description: The status codes and error response shapes you'll see across the API.
+---
+
+import { BookOpen, Rocket, Gauge } from 'lucide-react';
+
+This page documents the HTTP status codes and error response formats you'll encounter when calling the Plytix API.
+
+## HTTP status codes
+
+The API returns the following standard HTTP status codes:
+
+| Status code | Meaning |
+|---|---|
+| 200 OK | The request has succeeded. The response body usually contains a representation of the resource. |
+| 201 CREATED | The request has succeeded and a resource has been created. The response body usually contains a representation of the resource, and its location is available in the `location` header. |
+| 202 ACCEPTED | The request has been accepted but will be completed at some point in the future. |
+| 204 NO CONTENT | The request has been fulfilled. There's no response body. |
+| 400 BAD REQUEST | The request has invalid syntax. |
+| 401 AUTH FAILED | The request lacks valid authentication credentials for the target resource. |
+| 403 FORBIDDEN | The server understood the request but refuses to authorize it. |
+| 404 NOT FOUND | The requested resource hasn't been found on the server. |
+| 405 METHOD NOT ALLOWED | The HTTP method isn't allowed on the target resource. |
+| 409 CONFLICT | The server understood the request, but it has no effect on the current state of the resource. |
+| 422 UNPROCESSABLE ENTITY | The request is syntactically well formed but has semantic errors. |
+| 428 PRECONDITION REQUIRED | The request can't be processed because some conditions aren't met. |
+| 429 TOO MANY REQUESTS | The API rate limit has been exceeded. |
+| 500 SERVER ERROR | The server wasn't able to fulfill the request. You can repeat the request later. |
+
+## Error response format
+
+Operations declare only two response codes in the OpenAPI specification: 200 for successful requests, and 422 for validation errors.
+
+Every response, successful or not, uses an envelope with a `data` field and an `errors` array. The `errors` array is always present, even on a successful response, and is empty when there's nothing to report. Search responses also include a `pagination` object with `next_page` and `previous_page`.
+
+Each entry in `errors` is an `Error` object:
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `name` | string | Yes | Error name. |
+| `description` | string | Yes | Error description. |
+
+For 422 responses, the body uses a different shape, `HTTPValidationError`, with a `detail` array instead of `errors`:
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `detail` | array of validation errors | No | List of validation errors. |
+
+Each entry in `detail` is a `ValidationError`:
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `loc` | array of string or integer | Yes | Location of the invalid field. |
+| `msg` | string | Yes | Validation error message. |
+| `type` | string | Yes | Validation error type. |
+
+Note: earlier design drafts of the API described a single `error` object, with `name` and `description`, for all 4xx and 5xx responses. The current specification instead returns an `errors` array on every response, as documented above.
+
+## Deprecation notices
+
+The API sends a custom `X-Plytix-Deprecation` header in the response when the endpoint you're calling is scheduled for deprecation soon.
+
+## Related resources
+
+<Cards>
+  <Card icon={<BookOpen />} title="API Overview" href="/docs/reference/api-reference-overview">
+    What the Plytix API is for, the resources it exposes, and the response conventions this page builds on.
+  </Card>
+  <Card icon={<Rocket />} title="Get started with the API" href="/docs/guides/quickstart">
+    Authentication and making your first request.
+  </Card>
+  <Card icon={<Gauge />} title="Rate limits" href="/docs/reference/rate-limits">
+    How Plytix's API rate limits work and where to check the limits for your plan.
+  </Card>
+</Cards>
