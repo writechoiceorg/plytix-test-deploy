@@ -50,7 +50,7 @@ Enabled via `app/api/mcp/route.ts` (added with `npx @fumadocs/cli feature mcp`).
 
 ## Analytics
 
-Self-hosted Umami is wired as a no-op placeholder — set `NEXT_PUBLIC_UMAMI_SRC` and `NEXT_PUBLIC_UMAMI_WEBSITE_ID` (see `.env.example`) once an instance exists.
+Self-hosted Umami is wired as a no-op placeholder — set `NEXT_PUBLIC_UMAMI_SRC` and `NEXT_PUBLIC_UMAMI_WEBSITE_ID` (see `.env.example`) once an instance exists. See `UMAMI-SETUP.md` for the activation steps, including a Cloudflare/OpenNext gotcha around build-time env vars.
 
 ## Deploying (Cloudflare via OpenNext)
 
